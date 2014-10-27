@@ -22,7 +22,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 
 .comment p
 {
-	background-color: #def3fd;
+	background-color: #E9FFE0;
 	margin: 15px;
 	border-radius: 7px;
 }
@@ -46,7 +46,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 .content
 {
 	font-size: 13px;
-	background-color: white;
+	background-color: #d1d1d1;
 	width: 500px;
 	/*height: 150px;*/
 	float:left;
