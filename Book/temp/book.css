@@ -5,6 +5,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 */
 .search
 {
+	color: white;
 	display:inline;
 	height: 50px;
 	width: 700px;
@@ -33,11 +34,6 @@ Released for free under a Creative Commons Attribution 2.5 License
 }
 
 .comment a
-{
-	margin: 15px;
-}
-
-#pmargin
 {
 	margin: 15px;
 }
@@ -79,6 +75,38 @@ Released for free under a Creative Commons Attribution 2.5 License
 	margin: 10px;
 }
 
+.search_result
+{
+	display: inline;
+	position: absolute;
+	width: 960px;
+	background-color: white;
+	top: 170px;
+}
+
+.result_box
+{
+	width: 100px;
+	height: 130px;
+	background-color: #cbbeb5;
+	margin: 30px;
+	margin-top: 15px;
+	float: right;
+	border-radius: 5px;
+}
+
+.result_box h1 ,h4
+{
+	font-size: 12px;
+	text-align: center; 
+}
+
+.result_box :hover
+{
+
+	color: white;
+}
+
 @font-face
 {
 	font-family: A Afsaneh;
@@ -91,15 +119,27 @@ Released for free under a Creative Commons Attribution 2.5 License
 	src: url(Far_TextBold.ttf);
 }
 
+@font-face
+{
+	font-family: Umar Base;
+	src: url(Umar Base.ttf);
+}
+
+@font-face
+{
+	font-family: why so serious;
+	src: url(whysoserious.ttf);
+}
+
 body {
 	overflow: hidden;
 	background-size: 100% 100%;
 	margin: 0px;
 	padding: 0;
 	background: #0C0C0C url(images/bg.jpg)  no-repeat center top;
-	background-size: 100% 30%;
+	background-size: 100% 70%;
 	text-align: right;
-	font-family:  Far.Text Bold, A Afsaneh ,Tahoma, Arial, Helvetica, sans-serif;
+	font-family: A Afsaneh, Far.Text Bold,Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	color: #000000;
 }
@@ -109,6 +149,7 @@ h1, h2, h3 {
 }
 
 h1 {
+	font-family:  A Afsaneh ,Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 1.6em;
 	font-weight: normal;
 }
@@ -245,7 +286,7 @@ img.right {
 
 #menu {
 	width: 960px;
-	margin: -90px auto;
+	margin: -70px auto;
 	padding: 0;
 	height: 62px;
 	background: url(images/img02.jpg) repeat-x left top;
