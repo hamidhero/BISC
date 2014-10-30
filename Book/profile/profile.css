@@ -1,83 +1,10 @@
-/*
+﻿/*
 Design by Free CSS Templates
 http://www.freecsstemplates.org
 Released for free under a Creative Commons Attribution 2.5 License
 */
-.search
-{
-	display:inline;
-	height: 50px;
-	width: 700px;
-	position: absolute;
-	top: 17px;
-	right: 200px;
-}
 
 
-.comment
-{
-	width: 460px;
-	margin: 20px;
-}
-
-.comment p
-{
-	background-color: #def3fd;
-	margin: 15px;
-	border-radius: 7px;
-}
-
-.comment p
-{
-	margin: 15px;
-}
-
-.comment a
-{
-	margin: 15px;
-}
-
-#pmargin
-{
-	margin: 15px;
-}
-
-
-.content
-{
-	font-size: 13px;
-	background-color: white;
-	width: 500px;
-	/*height: 150px;*/
-	float:left;
-}
-
-
-.content a
-{
-	color: orange;
-	margin: 15px;
-}
-
-.content label
-{
-	font-size: 18px;
-	margin: 10px;
-}
-
-
-.info
-{
-	background-color: #d1edc8;
-	width: 470px;
-	margin: 15px;
-	border-radius: 7px;
-}
-
-.info p
-{
-	margin: 10px;
-}
 
 @font-face
 {
@@ -97,7 +24,7 @@ body {
 	margin: 0px;
 	padding: 0;
 	background: #0C0C0C url(images/bg.jpg)  no-repeat center top;
-	background-size: 100% 30%;
+	background-size: 100% 20%;
 	text-align: right;
 	font-family:  Far.Text Bold, A Afsaneh ,Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -477,45 +404,54 @@ img.right {
 	font-size: 10px;
 	color: #CCCCCC;
 }
-/* Calendar */
 
-#calendar_wrap {
-	padding: 10px 15px;
-	text-align: center;
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
 }
 
-#calendar_wrap table {
+.ac_results ul {
 	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
-#calendar_wrap th {
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
 }
 
-#calendar_wrap td {
+.ac_loading {
+	background: white url('indicator.gif') right center no-repeat;
 }
 
-#calendar_wrap tfoot td {
-	border: none;
+.ac_odd {
+	background-color: #eee;
 }
 
-#calendar_wrap tfoot td#prev {
-	text-align: left;
-	font-weight: bold;
-	border: none;
-}
-
-#calendar_wrap tfoot td#prev a {
-	border: none;
-}
-
-#calendar_wrap tfoot td#next {
-	text-align: right;
-	font-weight: bold;
-	border: none;
-}
-
-#calendar_wrap tfoot td#next a {
-	border: none;
+.ac_over {
+	background-color: #FFFFCC;
+	color: black;
 }
 
 /* Footer */

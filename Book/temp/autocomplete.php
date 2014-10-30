@@ -20,7 +20,7 @@
 	$q=$_GET['q'];
 	$my_data=mysql_real_escape_string($q);
 		
-	/*if(isset($_POST['search_bench']))
+	if(isset($_POST['search_bench']))
 	{
 		if($_POST['search_bench'] == 'book')
 		{
@@ -36,7 +36,7 @@
 	else
 	{
 		echo ('not set');
-	}*/
+	}
 	
 	$sql="SELECT Name FROM Book WHERE Name LIKE '%$my_data%' ORDER BY Name";
 	$result = mysql_query($sql) or die(mysqli_error());

@@ -25,7 +25,7 @@ if (isset($_POST["login"]))  {
 
         else if(mysql_result($result,0)==$password){
 		    $_SESSION['username']=$username;
-			header('location:profile\profile.html');
+			header('location:profile\profile.php');
 	    }
 
         else {
@@ -138,6 +138,8 @@ if (isset($_POST['send'])  )
 				<br />
 			</h2>
 		</section>
+		
+		
 		<div class ='search'>
 			<font color='#FFFFFF'> 
 						<form method='POST' action='autocomplete.php'>
@@ -151,6 +153,7 @@ if (isset($_POST['send'])  )
 						</form>
 			</font>
 		</div>
+		
 		
 		
 		<div class="bmenu" >
@@ -174,11 +177,7 @@ if (isset($_POST['send'])  )
 			</ul>
 		</div>
 		
-		
-		
-		
-		
-         <?php
+        <?php
          if (!isset($_SESSION['username'])) {
          print("
 		<div class='signinpart'>
@@ -197,7 +196,7 @@ if (isset($_POST['send'])  )
         }
         else{
 
-        print("<div class='goToProfile'><a href='profile/profile.html'> $first_name  $last_name </a>
+        print("<div class='goToProfile'><a href='profile/profile.php'> $first_name  $last_name </a>
         <form method='post' action=''><input name='Logout' type='submit' value='خروج' /></form></div>");
 
         }
@@ -207,7 +206,7 @@ if (isset($_POST['send'])  )
 		
 		
 		<div id="contactdiv">
-            <form class="form" method="post" action="profile/profile.html" id="contact" accept-charset="UTF-8">
+            <form class="form" method="post" action="profile/profile.php" id="contact" accept-charset="UTF-8">
                 <img src="button_cancel.png" class="img" id="cancel"/>
                 <h3>فرم ثبت نام</h3>
                 <hr/><br/>
@@ -241,9 +240,13 @@ if (isset($_POST['send'])  )
             </form>
         </div>	
 		
-		<div id="footer" dir="ltr" >
-			<p class="copyright">&copy;&nbsp;&nbsp;2014 All Rights Reserved &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">BISC</a>.</p>
+		
+		<div style="height: 40px; width: 40 px; color: yellow;">
+			;grtttttttw'grjklbmrglkbnr
 		</div>
+		<!--<div id="footer" dir="ltr" >
+			<p class="copyright">&copy;&nbsp;&nbsp;2014 All Rights Reserved &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">BISC</a>.</p>
+		</div>-->
 
 	</body>
 </html>

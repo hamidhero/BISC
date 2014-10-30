@@ -1,15 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+﻿<?php
+include("config.php");
 
+session_start();
+connect();
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Soothing
+Description: A three-column, fixed-width blog design.
+Version    : 1.0
+Released   : 20091003
+
+-->
 <html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>کتاب مورد نظر</title>
+<title>پروفایل شخصی</title>
 <meta name="keywords" content="" />
 <meta name="Soothing" content="" />
-<link href="book.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="profile.css" rel="stylesheet" type="text/css" media="screen" />
 <link rel="shortcut icon" href="..\book.ico" />
-<script type="text/javascript" src="..\jquery.js"></script>
-<script type="text/javascript" src="..\jquery.autocomplete.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.autocomplete.js"></script>
 <script>
 			$(document).ready(function(){
 			$("#tag").autocomplete("autocomplete.php", 
@@ -46,10 +64,18 @@
 		<div id="sidebar1" class="sidebar">
 			<ul>
 				<li>
-					<h2>کتاب های مرتبط</h2>
+					<h2>کتاب های اخیر</h2>
 					<ul>
 						<li><a href="#">پایگاه داده</a></li>
-						
+						<li><a href="#">مدار</a></li>
+						<li><a href="#">الکترونیک</a></li>
+						<li><a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>
+						<li><a href="#">Aliquam libero</a></li>
+						<li><a href="#">Consectetuer adipiscing elit</a></li>
+						<li><a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>
 					</ul>
 				</li>
 				
@@ -58,35 +84,17 @@
 		</div>
 		<!-- start content -->
 		
-		<div class="content" >
-			<a href="#"> حمید </a> این کتاب را معرفی کرده است.
-			<br><br>
-			<label>توضیحات معرف کتاب:</label><br>
-			<div class="info">
-			
-				<p>
-					این کتاب جزو کتاب های جذاب و خواندنی قرن اخیر است که نویسنده در آن سعی کرده است تا ما را با وقایع آن دوران آشنا کند.
-				</p>
-				
-			</div>
-			<br>
-			<label>نظرات سایر کاربران:</label><br>
-			<div class="comment">
-				<a href="#"> حسن : </a>
-				<p>
-					کتاب بسیار قشنگ و آموزنده ای بود 
-					بسیار متشکرم.یکبنسبخنثقخخخخخخخخخخلسکمبنیسکمثخلنثصگلنفثخ
-				</p>
-				<br>
-				
-				<a href="#"> سعید : </a>
-				<p>
-					من این کتاب را چند سال پیش خوانده ام ولی آنچنان خوشم نیومد :(
-				</p>
-			</div>
-			
+		<div id="content">
+			<form action="" method="post" dir="rtl">
+				<legend> معرفی کتاب جدید </legend>      <br>
+				<input type="text" name="name" placeholder="نام کتاب" /> <br>
+				<input type="text" name="writer" placeholder="نام نویسنده" /> <br>
+				<input type="text" name="year" placeholder="سال انتشار" /> <br>
+				<input type="text" name="publisher" placeholder="انتشارات" /> <br>
+				<textarea cols="23" rows="6" placeholder="نظر شما در مورد این کتاب ..."></textarea> <br>
+				<input name="submit" type="submit" value="ثبت" />
+			</form>
 		</div>
-		
 
 		<!-- end content -->
 		<!-- start sidebars -->
@@ -95,12 +103,12 @@
 				
 				
 				<li>
-					<h2>مشخصات کتاب</h2>
+					<h2>مشخصات شما</h2>
 					<ul>
 						<li><a href="#">نام</a></li>
-						<li><a href="#">نویسنده</a></li>
-						<li><a href="#">سال انتشار</a></li>
-						<li><a href="#">تعداد صفحات</a></li>
+						<li><a href="#">نام خانوادگی</a></li>
+						<li><a href="#">نام کاربری</a></li>
+						<li><a href="#">تعداد کتاب های معرفی کرده</a></li>
 					</ul>
 				</li>
 				

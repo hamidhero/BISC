@@ -518,45 +518,54 @@ img.right {
 	font-size: 10px;
 	color: #CCCCCC;
 }
-/* Calendar */
 
-#calendar_wrap {
-	padding: 10px 15px;
-	text-align: center;
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
 }
 
-#calendar_wrap table {
+.ac_results ul {
 	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
-#calendar_wrap th {
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
 }
 
-#calendar_wrap td {
+.ac_loading {
+	background: white url('indicator.gif') right center no-repeat;
 }
 
-#calendar_wrap tfoot td {
-	border: none;
+.ac_odd {
+	background-color: #eee;
 }
 
-#calendar_wrap tfoot td#prev {
-	text-align: left;
-	font-weight: bold;
-	border: none;
-}
-
-#calendar_wrap tfoot td#prev a {
-	border: none;
-}
-
-#calendar_wrap tfoot td#next {
-	text-align: right;
-	font-weight: bold;
-	border: none;
-}
-
-#calendar_wrap tfoot td#next a {
-	border: none;
+.ac_over {
+	background-color: #FFFFCC;
+	color: black;
 }
 
 /* Footer */
