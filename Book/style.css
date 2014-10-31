@@ -16,7 +16,7 @@
 {	
 	display: inline;
 	height: 50px;
-	width: 485px;
+	width: 445px;
 	position: absolute;
 	left:0px;
 	top: 0px;
@@ -27,6 +27,30 @@
 	float: left;
 	color: #e3e3e3;
 	margin-right: 100px;
+	left:0px;
+}
+input[type=text], signinpart {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=text]:focus, signinpart:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+input[type=password]:focus, signinpart:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
 }
 
 .search

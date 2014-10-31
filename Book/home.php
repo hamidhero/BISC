@@ -180,13 +180,13 @@ if (isset($_POST['send'])  )
         <?php
          if (!isset($_SESSION['username'])) {
          print("
-		<div class='signinpart'>
-			<form method='POST' action='' >
+		<div c>
+			<form method='POST' action='' class='signinpart'>
 				<ul>
 					<li><input type='text' name='user' placeholder='نام کاربری' ></li>
 					<li><input type='password' name='pass' placeholder='رمز عبور ' ></li>
 					<li><input type='submit' name='login' value= 'ورود' ></li><br>
-					<a href='#' id='onclick'>هنوز ثبت نام نکردهاید؟</a>
+					<a href='#' id='onclick'>هنوز ثبت نام نکرده اید؟</a>
 				</ul>
 			</form>
 			
@@ -241,12 +241,12 @@ if (isset($_POST['send'])  )
         </div>	
 		
 		
-		<div style="height: 40px; width: 40 px; color: yellow;">
+		<!--<div style="height: 40px; width: 40 px; color: yellow;">
 			;grtttttttw'grjklbmrglkbnr
-		</div>
-		<!--<div id="footer" dir="ltr" >
-			<p class="copyright">&copy;&nbsp;&nbsp;2014 All Rights Reserved &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">BISC</a>.</p>
-		</div>-->
+		</div>>-->
 
+		<div id="footer" dir="ltr" >
+			<p class="copyright">&copy;&nbsp;&nbsp;2014 All Rights Reserved &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">BISC</a>.</p>
+		</div
 	</body>
 </html>

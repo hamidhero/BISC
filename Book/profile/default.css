@@ -1,83 +1,10 @@
-/*
+﻿/*
 Design by Free CSS Templates
 http://www.freecsstemplates.org
 Released for free under a Creative Commons Attribution 2.5 License
 */
-.search
-{
-	display:inline;
-	height: 50px;
-	width: 700px;
-	position: absolute;
-	top: 17px;
-	right: 200px;
-}
 
 
-.comment
-{
-	width: 460px;
-	margin: 20px;
-}
-
-.comment p
-{
-	background-color: #def3fd;
-	margin: 15px;
-	border-radius: 7px;
-}
-
-.comment p
-{
-	margin: 15px;
-}
-
-.comment a
-{
-	margin: 15px;
-}
-
-#pmargin
-{
-	margin: 15px;
-}
-
-
-.content
-{
-	font-size: 13px;
-	background-color: white;
-	width: 500px;
-	/*height: 150px;*/
-	float:left;
-}
-
-
-.content a
-{
-	color: orange;
-	margin: 15px;
-}
-
-.content label
-{
-	font-size: 18px;
-	margin: 10px;
-}
-
-
-.info
-{
-	background-color: #d1edc8;
-	width: 470px;
-	margin: 15px;
-	border-radius: 7px;
-}
-
-.info p
-{
-	margin: 10px;
-}
 
 @font-face
 {
@@ -97,7 +24,7 @@ body {
 	margin: 0px;
 	padding: 0;
 	background: #0C0C0C url(images/bg.jpg)  no-repeat center top;
-	background-size: 100% 30%;
+	background-size: 100% 20%;
 	text-align: right;
 	font-family:  Far.Text Bold, A Afsaneh ,Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -318,6 +245,23 @@ img.right {
 	width: 460px;
 	margin: 10px 20px 20px 20px;
 	/*background: #FFFFFF;*/
+}
+input[type=text], content {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=text]:focus, content:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
 }
 
 .post {
