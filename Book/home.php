@@ -102,14 +102,14 @@ if (isset($_POST['send'])  )
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="jquery_popup.js"></script>
 		<script type="text/javascript" src="jquery.js"></script>
-		<script type="text/javascript" src="jquery.autocomplete.js"></script>
+		<!--<script type="text/javascript" src="jquery.autocomplete.js"></script>-->
 		<style>
 			.no-cssanimations .rw-wrapper .rw-sentence span:first-child{
 				opacity: 1;
 			}
 		</style>
 		
-		<script>
+		<!--<script>
 			$(document).ready(function(){
 			$("#tag").autocomplete("autocomplete.php", 
 			{
@@ -117,14 +117,89 @@ if (isset($_POST['send'])  )
 			});
 										});
 		</script>
-		
+		-->
 		<link rel="shortcut icon" href="book.ico" />
+<!-- Starting from here -->
+<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+$(".search").keyup(function() 
+{ 
+var searchid = $(this).val();
+var dataString = 'search='+ searchid;
+if(searchid!='')
+{
+	$.ajax({
+	type: "POST",
+	url: "search.php",
+	data: dataString,
+	cache: false,
+	success: function(html)
+	{
+	$("#result").html(html).show();
+	}
+	});
+}return false;    
+});
 
+jQuery("#result").live("click",function(e){ 
+	var $clicked = $(e.target);
+	var $name = $clicked.find('.name').html();
+	var decoded = $("<div/>").html($name).text();
+	$('#searchid').val(decoded);
+});
+jQuery(document).live("click", function(e) { 
+	var $clicked = $(e.target);
+	if (! $clicked.hasClass("search")){
+	jQuery("#result").fadeOut(); 
+	}
+});
+$('#searchid').click(function(){
+	jQuery("#result").fadeIn();
+});
+});
+</script>
+<style>	
+/*#searchid
+	{
+		
+		border:solid 1px #000;
+		padding:10px;
+		font-size:14px;
+	}*/
+	#result
+	{
+		top:35px;
+		right:420px;
+		position:absolute;
+		width:130px;
+		padding:5px;
+		display:none;
+		margin-top:-1px;
+		border-top:0px;
+		overflow:hidden;
+		border:1px #61c4ea solid;
+		background-color: white;
+	}
+	.show
+	{
+		padding:5px; 
+		border-bottom:1px #999 dashed;
+		font-size:12px; 
+		height:20px;
+	}
+	.show:hover
+	{
+		background:#4c66a4;
+		color:#FFF;
+		cursor:pointer;
+	}
+</style>
 	</head>
 
 	<body>
 		
-		<section class="rw-wrapper">
+	<section class="rw-wrapper">
 			<h2 class="rw-sentence">
 				<span>شما در این جا</span>
 				<br />
@@ -140,24 +215,50 @@ if (isset($_POST['send'])  )
 		</section>
 		
 		
-		<div class ='search'>
+	<!--	<div class ='search'>
 			<font color='#FFFFFF'> 
 						<form method='POST' action='autocomplete.php'>
 							جستجو براساس
-							<input type='checkbox' name='book' value='book'> کتاب  
-							<input type='checkbox' name='writer' value='writer'> نویسنده 
-							<input type='checkbox' name='year' value='year'> سال انتشار 
+							<input type='checkbox' name='search' value='checkbox' id="search_1"> کتاب  
+							<input type='checkbox' name='search' value='checkbox' id="search_2"> نویسنده 
+							<input type='checkbox' name='search' value='checkbox' id="search_3"> سال انتشار 
 							<input type='text' 	   name='tag' id='tag' size='20' >
 							<input type='submit'   name='search' value= 'جستجو' >
 							
 						</form>
+                        
 			</font>
 		</div>
 		
-		
-		
-		<div class="bmenu" >
-			<h2  style="margin-top:0px;"><font color="#e3e3e3">دسته بندی کتاب ها</font></h2>
+		-->
+    <div class="search2" >
+       
+        <form method="post" action="search.php">
+        <table width="639" style="color:white">
+          <tr>
+         <td width="196"><div align="left">جستجو بر اساس</div></td>
+            <td width="54"><label>
+              <input type="checkbox" name="Search" value="checkbox" id="Search_0">
+              کتاب</label></td>
+     
+            <td width="64"><label>
+              <input type="checkbox" name="Search" value="checkbox" id="Search_1">
+              نویسنده</label></td>
+            <td width="85"><label>
+              <input type="checkbox" name="Search" value="checkbox" id="Search_2">
+              سال انتشار</label></td>
+               <td width="147"><input type="text" class="search" id="searchid" ></td>
+               <td width="65"><input type="submit" name='search' value= 'جستجو'></td>
+              
+          </tr>
+        </table>
+        </form>
+        <div id="result" >
+        </div>
+        </div>
+        
+<div class="bmenu" >
+  <h2  style="margin-top:0px;"><font color="#e3e3e3">دسته بندی کتاب ها</font></h2>
 			<ul>
 				<li><a href="#">تاریخی</a></li>
 				<li><a href="#">رمان</a></li>
@@ -180,7 +281,7 @@ if (isset($_POST['send'])  )
         <?php
          if (!isset($_SESSION['username'])) {
          print("
-		<div c>
+		<div>
 			<form method='POST' action='' class='signinpart'>
 				<ul>
 					<li><input type='text' name='user' placeholder='نام کاربری' ></li>
@@ -206,7 +307,7 @@ if (isset($_POST['send'])  )
 		
 		
 		<div id="contactdiv">
-            <form class="form" method="post" action="profile/profile.php" id="contact" accept-charset="UTF-8">
+            <form class="form" method="post" action="" id="contact" accept-charset="UTF-8">
                 <img src="button_cancel.png" class="img" id="cancel"/>
                 <h3>فرم ثبت نام</h3>
                 <hr/><br/>
@@ -248,5 +349,5 @@ if (isset($_POST['send'])  )
 		<div id="footer" dir="ltr" >
 			<p class="copyright">&copy;&nbsp;&nbsp;2014 All Rights Reserved &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">BISC</a>.</p>
 		</div
-	</body>
+	></body>
 </html>

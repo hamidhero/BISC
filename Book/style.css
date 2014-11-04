@@ -16,7 +16,7 @@
 {	
 	display: inline;
 	height: 50px;
-	width: 445px;
+	width: 500px;
 	position: absolute;
 	left:0px;
 	top: 0px;
@@ -29,6 +29,7 @@
 	margin-right: 100px;
 	left:0px;
 }
+
 input[type=text], signinpart {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -53,14 +54,14 @@ input[type=password]:focus, signinpart:focus {
   border: 1px solid rgba(81, 203, 238, 1);
 }
 
-.search
+.search2
 {
-	display:inline;
+	display: inline;
 	height: 50px;
-	width: 700px;
+	width: 642px;
 	position: absolute;
-	top: 17px;
-	right: 200px;
+	top: 14px;
+	right: 54px;
 }
 
 .goToProfile
@@ -139,8 +140,8 @@ input[type="submit"]
 }
 	
 .bmenu{
-	height:550px;
-    width:200px;
+	height:450px;
+    width:150px;
     overflow:hidden;
     position:absolute;
 	float:right;

@@ -30,6 +30,22 @@ connect();
 </head>
 
 <body>
+<?php
+$q=$_GET['q'];
+
+$my_data=mysql_real_escape_string($q);
+$sql="SELECT Name FROM Book WHERE Name LIKE '%$my_data%' ORDER BY Name";
+$result = mysql_query($sql) or die(mysqli_error());
+if($result)
+	{
+		while($row=mysql_fetch_array($result))
+		{
+			echo $row['Name']."\n";
+		}
+	}	
+	print("<h1>sfasdasd</h1>");
+	
+?>
 <div id="wrapper">
 <!-- start header -->
 <div id="header">
@@ -47,11 +63,12 @@ connect();
 	</div>
 	
 </div>
+
 <!-- end header -->
 	<!-- start page -->
-	<div id="page">
+	<!--<div id="page">
 		
-		<!-- start content -->
+		 start content 
 		<div class="search_result">
 			<div class="line">
 			<a href="#"><div class="result_box">
@@ -113,12 +130,12 @@ connect();
 			</div>
 		</div>
 
-		<!-- end content -->
+	 end content -->
 		<!-- start sidebars -->
 			<font face="A Afsaneh">
 					<div class ='search'>
 			 
-						<form method='POST' action='autocomplete.php'>
+						<form method='POST'>
 							جستجو براساس
 							<input type='checkbox' name='book' value='book'> کتاب
 							<input type='checkbox' name='writer' value='writer'> نویسنده 
@@ -127,6 +144,7 @@ connect();
 							<input type='submit'   name='search' value= 'جستجو' >
 							
 						</form>
+                        
 			</font>
 		</div>
 				</li>

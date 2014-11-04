@@ -49,4 +49,5 @@
 			echo $row['Name']."\n";
 		}
 	}
+	print("<h1>".$row['name']."</h1>");
 ?>
