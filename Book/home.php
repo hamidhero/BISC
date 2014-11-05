@@ -25,7 +25,7 @@ if (isset($_POST["login"]))  {
 
         else if(mysql_result($result,0)==$password){
 		    $_SESSION['username']=$username;
-			header('location:profile\profile.php');
+			header('location:profile/profile.php');
 	    }
 
         else {
@@ -232,22 +232,23 @@ $('#searchid').click(function(){
 		
 		-->
     <div class="search2" >
+
        
-        <form method="post" action="search.php">
+        <form method="post" action="search_decision.php">
         <table width="639" style="color:white">
           <tr>
          <td width="196"><div align="left">جستجو بر اساس</div></td>
             <td width="54"><label>
-              <input type="checkbox" name="Search" value="checkbox" id="Search_0">
+              <input type="checkbox" name="SearchB" value="book" id="Search_0">
               کتاب</label></td>
      
             <td width="64"><label>
-              <input type="checkbox" name="Search" value="checkbox" id="Search_1">
+              <input type="checkbox" name="SearchB" value="writer" id="Search_1">
               نویسنده</label></td>
             <td width="85"><label>
-              <input type="checkbox" name="Search" value="checkbox" id="Search_2">
+              <input type="checkbox" name="SearchB" value="year" id="Search_2">
               سال انتشار</label></td>
-               <td width="147"><input type="text" class="search" id="searchid" ></td>
+               <td width="147"><input type="text" name="input" class="search" id="searchid" ></td>
                <td width="65"><input type="submit" name='search' value= 'جستجو'></td>
               
           </tr>
