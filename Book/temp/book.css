@@ -136,12 +136,12 @@ body {
 	background-size: 100% 100%;
 	margin: 0px;
 	padding: 0;
-	/*background: #0C0C0C url(images/bg.jpg)  no-repeat center top;
-	background-size: 100% 70%;*/
+	background: #0C0C0C url(images/bg.jpg)  no-repeat center top;
+	background-size: 100% 70%;
 	text-align: right;
 	font-family: A Afsaneh, Far.Text Bold,Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 11px;
-	/*color: #000000;*/
+	color: #000000;
 }
 
 h1, h2, h3 {

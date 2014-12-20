@@ -71,6 +71,7 @@ if (isset($_POST['send'])  )
 
      if (mysql_affected_rows()){
              $_SESSION['username']=$user_name;
+             header("location:profile/profile.php") ;
      }
      else {
        die("your insert information don't Successful")     ;
@@ -102,14 +103,14 @@ if (isset($_POST['send'])  )
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="jquery_popup.js"></script>
 		<script type="text/javascript" src="jquery.js"></script>
-		<!--<script type="text/javascript" src="jquery.autocomplete.js"></script>-->
+		<script type="text/javascript" src="jquery.autocomplete.js"></script>
 		<style>
 			.no-cssanimations .rw-wrapper .rw-sentence span:first-child{
 				opacity: 1;
 			}
 		</style>
 		
-		<!--<script>
+		<script>
 			$(document).ready(function(){
 			$("#tag").autocomplete("autocomplete.php", 
 			{
@@ -117,90 +118,16 @@ if (isset($_POST['send'])  )
 			});
 										});
 		</script>
-		-->
-		<link rel="shortcut icon" href="book.ico" />
-<!-- Starting from here -->
-<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
-<script type="text/javascript">
-$(function(){
-$(".search").keyup(function() 
-{ 
-var searchid = $(this).val();
-var dataString = 'search='+ searchid;
-if(searchid!='')
-{
-	$.ajax({
-	type: "POST",
-	url: "search.php",
-	data: dataString,
-	cache: false,
-	success: function(html)
-	{
-	$("#result").html(html).show();
-	}
-	});
-}return false;    
-});
-
-jQuery("#result").live("click",function(e){ 
-	var $clicked = $(e.target);
-	var $name = $clicked.find('.name').html();
-	var decoded = $("<div/>").html($name).text();
-	$('#searchid').val(decoded);
-});
-jQuery(document).live("click", function(e) { 
-	var $clicked = $(e.target);
-	if (! $clicked.hasClass("search")){
-	jQuery("#result").fadeOut(); 
-	}
-});
-$('#searchid').click(function(){
-	jQuery("#result").fadeIn();
-});
-});
-</script>
-<style>	
-/*#searchid
-	{
 		
-		border:solid 1px #000;
-		padding:10px;
-		font-size:14px;
-	}*/
-	#result
-	{
-		top:35px;
-		right:420px;
-		position:absolute;
-		width:130px;
-		padding:5px;
-		display:none;
-		margin-top:-1px;
-		border-top:0px;
-		overflow:hidden;
-		border:1px #61c4ea solid;
-		background-color: white;
-	}
-	.show
-	{
-		padding:5px; 
-		border-bottom:1px #999 dashed;
-		font-size:12px; 
-		height:20px;
-	}
-	.show:hover
-	{
-		background:#4c66a4;
-		color:#FFF;
-		cursor:pointer;
-	}
-</style>
+		<link rel="shortcut icon" href="book.ico" />
+
 	</head>
 
 	<body>
 		
-	<section class="rw-wrapper">
+		<section class="rw-wrapper">
 			<h2 class="rw-sentence">
+				<font face="A Afsaneh">
 				<span>شما در این جا</span>
 				<br />
 				<span>می تونید</span>
@@ -211,55 +138,27 @@ $('#searchid').click(function(){
 					<span>و...</span>
 				</div>
 				<br />
+				</font>
 			</h2>
 		</section>
-		
-		
-	<!--	<div class ='search'>
+		<div class ='search'>
 			<font color='#FFFFFF'> 
 						<form method='POST' action='autocomplete.php'>
 							جستجو براساس
-							<input type='checkbox' name='search' value='checkbox' id="search_1"> کتاب  
-							<input type='checkbox' name='search' value='checkbox' id="search_2"> نویسنده 
-							<input type='checkbox' name='search' value='checkbox' id="search_3"> سال انتشار 
+							<input type='checkbox' name='book' value='book'> کتاب  
+							<input type='checkbox' name='writer' value='writer'> نویسنده 
+							<input type='checkbox' name='year' value='year'> سال انتشار 
 							<input type='text' 	   name='tag' id='tag' size='20' >
 							<input type='submit'   name='search' value= 'جستجو' >
 							
 						</form>
-                        
 			</font>
 		</div>
 		
-		-->
-    <div class="search2" >
-
-       
-        <form method="post" action="search_decision.php">
-        <table width="639" style="color:white">
-          <tr>
-         <td width="196"><div align="left">جستجو بر اساس</div></td>
-            <td width="54"><label>
-              <input type="checkbox" name="SearchB" value="book" id="Search_0">
-              کتاب</label></td>
-     
-            <td width="64"><label>
-              <input type="checkbox" name="SearchB" value="writer" id="Search_1">
-              نویسنده</label></td>
-            <td width="85"><label>
-              <input type="checkbox" name="SearchB" value="year" id="Search_2">
-              سال انتشار</label></td>
-               <td width="147"><input type="text" name="input" class="search" id="searchid" ></td>
-               <td width="65"><input type="submit" name='search' value= 'جستجو'></td>
-              
-          </tr>
-        </table>
-        </form>
-        <div id="result" >
-        </div>
-        </div>
-        
-<div class="bmenu" >
-  <h2  style="margin-top:0px;"><font color="#e3e3e3">دسته بندی کتاب ها</font></h2>
+		
+		<div class="bmenu" >
+			<font face="A Afsaneh">
+			<h2  style="margin-top:0px;"><font color="#e3e3e3">دسته بندی کتاب ها</font></h2>
 			<ul>
 				<li><a href="#">تاریخی</a></li>
 				<li><a href="#">رمان</a></li>
@@ -272,23 +171,28 @@ $('#searchid').click(function(){
 				<li><a href="#">اقتصاد</a></li>
 				<li><a href="#">ادبیات</a></li>
 				<li><a href="#">فرهنگی</a></li>
-				<li><a href="#">آشپزی</a></li>
-				<li><a href="#">پزشکی</a></li>
+				<li><a href="#">اجتماعی</a></li>
+				<li><a href="#">داستان کوتاه</a></li>
 				<li><a href="#">صنعت</a></li>
     
 			</ul>
+			</font>
 		</div>
 		
-        <?php
+		
+		
+		
+		
+         <?php
          if (!isset($_SESSION['username'])) {
          print("
-		<div>
-			<form method='POST' action='' class='signinpart'>
+		<div class='signinpart'>
+			<form method='POST' action='' >
 				<ul>
 					<li><input type='text' name='user' placeholder='نام کاربری' ></li>
 					<li><input type='password' name='pass' placeholder='رمز عبور ' ></li>
 					<li><input type='submit' name='login' value= 'ورود' ></li><br>
-					<a href='#' id='onclick'>هنوز ثبت نام نکرده اید؟</a>
+					<a href='#' id='onclick'>هنوز ثبت نام نکردهاید؟</a>
 				</ul>
 			</form>
 			
@@ -342,13 +246,9 @@ $('#searchid').click(function(){
             </form>
         </div>	
 		
-		
-		<!--<div style="height: 40px; width: 40 px; color: yellow;">
-			;grtttttttw'grjklbmrglkbnr
-		</div>>-->
-
 		<div id="footer" dir="ltr" >
 			<p class="copyright">&copy;&nbsp;&nbsp;2014 All Rights Reserved &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">BISC</a>.</p>
-		</div
-	></body>
+		</div>
+
+	</body>
 </html>
